@@ -1,4 +1,4 @@
-// script.js
+// Initialisation 
 const totalPokemon = 151;
 let usedIndices = [];
 let currentPokemonIndex = 0;
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         checkAnswer(userAnswer);
     });
 });
-
+// Pokemon aléatoire 
 function getRandomPokemonIndex() {
     let index;
     do {
@@ -21,7 +21,7 @@ function getRandomPokemonIndex() {
     usedIndices.push(index);
     return index;
 }
-
+//Appel des infos sur le Pokemon 
 async function loadPokemon() {
     currentPokemonIndex = getRandomPokemonIndex();
 
@@ -38,7 +38,7 @@ async function loadPokemon() {
         document.getElementById('result').textContent = '';
     
 }
-
+// Check si la réponse est bonne 
 function checkAnswer(userAnswer) {
     if (userAnswer === currentPokemonName) {
         document.getElementById('result').textContent = 'Correct !';
